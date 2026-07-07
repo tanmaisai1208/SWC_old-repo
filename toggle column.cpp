@@ -19,6 +19,49 @@ if k=3, then we will toggle column 2 thrice and we will get row 2 with 1 1 1 i.e
 is 1 row with all 1’s.
 */
 
+
+------------------------------------------------------------------------------------------------------
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m, k;
+    cin >> n >> m >> k;
+
+    string row[105];
+
+    for (int i = 0; i < n; i++)
+        cin >> row[i];
+
+    int ans = 0;
+
+    for (int i = 0; i < n; i++) {
+
+        int zeros = 0;
+        for (char c : row[i])
+            if (c == '0')
+                zeros++;
+
+        // Cannot make this row all 1s
+        if (zeros > k || (k - zeros) % 2)
+            continue;
+
+        int cnt = 0;
+
+        // Count identical rows
+        for (int j = 0; j < n; j++)
+            if (row[i] == row[j])
+                cnt++;
+
+        ans = max(ans, cnt);
+    }
+
+    cout << ans << endl;
+}
+
+---------------------------------------------------------------------------------------
+
 #include<iostream>
 
 using namespace std;
