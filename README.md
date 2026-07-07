@@ -15,7 +15,7 @@
 FisherMan
 <!-- Jewel Maze -->
 <!-- Oil Mine -->
-<!-- Laughing Gas -->
+Laughing Gas 
 String Compression
 Frog Jump
 Crow Pot
